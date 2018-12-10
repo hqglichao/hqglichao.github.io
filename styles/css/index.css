@@ -934,6 +934,9 @@ pre code {
   }
 }
 @media (min-width: 992px) {
+  .docs-nav .container a.navbar-brand {
+    padding-left: 0px;
+  }
   .container {
     width: 970px;
   }
