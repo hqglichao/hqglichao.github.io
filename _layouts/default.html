@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body class="index">
+
+    {% include header.html %}
+    {% if page.title %}
+      {% include banner.html %}
+    {% else %}
+      {% include docs_header.html %}
+    {% endif %}
+
+    {{ content }}
+    
+    {% include footer.html %}
+
+  </body>
+</html>
