@@ -631,6 +631,9 @@ pre code {
   padding-left: 15px;
   padding-right: 15px;
 }
+.col-md-9 {
+  margin-bottom: 200px;
+}
 .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11 {
   float: left;
 }
@@ -6527,6 +6530,7 @@ hr {
 .docs-nav .container .navbar-brand {
   margin: 0;
   padding: 0;
+  padding-left: 30px;
 }
 .docs-nav .container .navbar-brand img {
   display: block;
