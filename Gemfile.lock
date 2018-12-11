@@ -242,6 +242,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-sitemap
   jekyll-theme-cayman
   minima
 
