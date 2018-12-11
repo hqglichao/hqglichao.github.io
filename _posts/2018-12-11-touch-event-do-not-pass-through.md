@@ -9,13 +9,12 @@ tag: [View, TouchEvent]
 * content
 {:toc}
 
-这是一篇关于[Mardown Tutorial](https://www.markdowntutorial.com/)的笔记。  
-本文所有示例源码，都可以在这个[项目源码](https://github.com/hqglichao/hqglichao.github.io)找到。  
-
-
-入门笔记1                       {#Mardow}
+点击不穿透                       {#View}
 ====================================
 
-
-致谢							{#Thanks}
-====================================
+如果有多层view叠加时，要使点击最上层view不穿透到下一层view。必需要让上层View消耗掉点击事件，也就是在`OnTouchEvent`中`return true`。  
+因为这样所有`Touch`事件就都有点击的这个view处理了，不会上传到`parentVew`。所以点击就不会穿透到`parentView`了。  
+`xml`代码如下：  
+```bash
+android:clickable="true"
+```
