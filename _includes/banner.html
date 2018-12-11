@@ -3,7 +3,11 @@
   <div class="container">
   	{% if page.categories != null %}
     	<a href="{{ '/categories/' | prepend: site.baseurl }}#{{page.categories}}-ref">{{page.categories}}</a>	/
-    	<a href="{{ '/tag/' | prepend: site.baseurl }}#{{page.tag}}-ref">{{page.tag}}</a>
+      <a href="{{ '/tag/' | prepend: site.baseurl }}#{{page.tag}}-ref">
+        {% for t in page.tags %}
+          {{ t | prepend: ' '}}
+        {% endfor %}
+      </a>
     {% else %}
     	{{ site.banner }}
     {% endif %}
