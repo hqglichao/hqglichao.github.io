@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android View 点击不穿透
+title: Android 小Tip
 date: 2018-12-11 17:16:00 +0800
 categories: Android
 tag: [View, TouchEvent]
@@ -9,7 +9,8 @@ tag: [View, TouchEvent]
 * content
 {:toc}
 
-点击不穿透                       {#View}
+
+View 点击不穿透                       {#View}
 ====================================
 
 如果有多层view叠加时，要使点击最上层view不穿透到下一层view。必需要让上层View消耗掉点击事件，也就是在`OnTouchEvent`中`return true`。  

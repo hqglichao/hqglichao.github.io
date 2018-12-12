@@ -8,10 +8,11 @@ tag: 教程
 * content
 {:toc}
 
+
 这是一篇关于[Mardown Tutorial](https://www.markdowntutorial.com/)的笔记。  
 本文所有示例源码，都可以在这个[项目源码](https://github.com/hqglichao/hqglichao.github.io)找到。  
 
-入门笔记1                       {#Mardow-tip-1}
+初级                       {#Mardow-junior}
 ------------------------------------------
 
 * _(_斜体_) \**（**加粗**）
@@ -27,3 +28,13 @@ tag: 教程
 
 [linkName]: https:\\\\www.github.com
 
+中级                     {#Mardow-senior}
+------------------------------------------
+
+* \`包裹，代表提示。例子：`引用`
+* \>引用。例子：
+  >引用
+* \~~~base，外加边框。例子：
+  ~~~bash
+  内容
+  ~~~
