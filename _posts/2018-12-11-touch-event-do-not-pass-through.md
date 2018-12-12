@@ -19,3 +19,11 @@ View 点击不穿透                       {#View}
 ```bash
 android:clickable="true"
 ```
+
+ListView 在padding中绘制               {#ListView}
+====================================
+
+`ListView`和`ScrollView`滑动时可以在padding部分内绘制内容
+```bash
+android:clipToPadding="false"
+```
