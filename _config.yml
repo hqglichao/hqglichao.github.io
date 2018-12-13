@@ -19,8 +19,4 @@ github_username: hqglichao
 # Build settings
 markdown: kramdown
 
-url: "https:\\hqglichao.github.io"
-plugins:
-  - jekyll-sitemap
-
 baidu_analysis: d45e57342a97903c697716b06f129b82
