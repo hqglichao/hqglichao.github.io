@@ -12,7 +12,7 @@
 ====================================
 * 统计
   *  百度统计  
-     去[百度统计网站]（https://tongji.baidu.com/web/welcome/login）上生成自己的百度统计ID，替换`_config.yml`中的`baidu_analysis`。
+     去[百度统计网站](https://tongji.baidu.com/web/welcome/login)上生成自己的百度统计ID，替换`_config.yml`中的`baidu_analysis`。
      本网站中的代码
      ```bash
      var _hmt = _hmt || [];
@@ -22,13 +22,13 @@
          var s = document.getElementsByTagName("script")[0]; 
          s.parentNode.insertBefore(hm, s);
      })();
-    ```
-  *  不蒜子统计
-     不蒜子统计是显示网站右上角的访问次数的。
-     只需添加代码
-     ```bash
-     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-     <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+     ```
+* 不蒜子统计
+    不蒜子统计是显示网站右上角的访问次数的。
+    只需添加代码
+    ```bash
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
     ```
 
 * 谷歌索引
