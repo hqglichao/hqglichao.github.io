@@ -32,4 +32,4 @@
 
 * 谷歌索引  
   使用谷歌索引，有两个文件要上传。先通过`site:https://hqglichao.github.io/`判断谷歌是不是已经录入，如果没有显示你的网站，则需要到[Google Search Console](https://www.google.com/webmasters/tools/home?hl=zh-TW)把需要确认的文件上传到自己网站的根目录。例如本网站中的`google4db5de0255abbcec.html`。
-  其次到[xml-sitemaps](https://www.xml-sitemaps.com/)生成自己的网站地图，上传到[Sitemap](https://www.google.com/webmasters/tools/sitemap-list?hl=zh_TW&siteUrl=https://hqglichao.github.io/#MAIN_TAB=0&CARD_TAB=-1)上。
+  其次到[xml-sitemaps](https://www.xml-sitemaps.com/)生成自己的网站地图，放到根目录下，并更新到[Sitemap](https://www.google.com/webmasters/tools/sitemap-list?hl=zh_TW&siteUrl=https://hqglichao.github.io/#MAIN_TAB=0&CARD_TAB=-1)上。
