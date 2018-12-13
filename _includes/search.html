@@ -1,0 +1,5 @@
+<div class="super-search" id="js-super-search">
+	<a href="javascript:void(0)" onclick="superSearch.toggle()" class="super-search__close-btn">X</a>
+	<input type="text" placeholder="Type here to search" class="super-search__input" id="js-super-search__input">
+	<ul class="super-search__results" id="js-super-search__results"></ul>
+</div>
