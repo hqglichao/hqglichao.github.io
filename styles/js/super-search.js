@@ -27,13 +27,13 @@ MIT Licensed
 			obj = [].slice.call(xml.childNodes).reduce(function (text, node) { return text + node.nodeValue; }, '');
 		}
 		else if (xml.hasChildNodes()) {
-			for(var i = 0; i < xml.childNodes.length; i++) {
+			for (var i = 0; i < xml.childNodes.length; i++) {
 				var item = xml.childNodes.item(i);
 				var nodeName = item.nodeName;
-				if (typeof(obj[nodeName]) == "undefined") {
+				if (typeof (obj[nodeName]) == "undefined") {
 					obj[nodeName] = xmlToJson(item);
 				} else {
-					if (typeof(obj[nodeName].push) == "undefined") {
+					if (typeof (obj[nodeName].push) == "undefined") {
 						var old = obj[nodeName];
 						obj[nodeName] = [];
 						obj[nodeName].push(old);
@@ -62,20 +62,24 @@ MIT Licensed
 		if (searchEl.classList.contains('is-active')) {
 			// while opening
 			searchInputEl.value = '';
+			setTimeout(function () {
+				searchInputEl.focus();
+			}, 210);
 		} else {
 			// while closing
 			searchResultsEl.classList.add('is-hidden');
 		}
-		setTimeout(function () {
-			searchInputEl.focus();
-		}, 210);
+	}
+
+	function dismissSearch() {
+		searchEl.classList.remove('is-active');
 	}
 
 	function handleInput() {
 		var currentResultHash, d;
 
 		currentInputValue = (searchInputEl.value + '').toLowerCase();
-		if (!currentInputValue || currentInputValue.length < 3) {
+		if (!currentInputValue) {
 			lastSearchResultHash = '';
 			searchResultsEl.classList.add('is-hidden');
 			return;
@@ -91,12 +95,12 @@ MIT Licensed
 		if (!matchingPosts.length) {
 			searchResultsEl.classList.add('is-hidden');
 		}
-		currentResultHash = matchingPosts.reduce(function(hash, post) { return post.title + hash; }, '');
+		currentResultHash = matchingPosts.reduce(function (hash, post) { return post.title + hash; }, '');
 		if (matchingPosts.length && currentResultHash !== lastSearchResultHash) {
 			searchResultsEl.classList.remove('is-hidden');
 			searchResultsEl.innerHTML = matchingPosts.map(function (post) {
 				d = new Date(post.pubDate);
-				return '<li><a href="' + post.link + '">' + post.title + '<span class="super-search__result-date">' + d.toUTCString().replace(/.*(\d{2})\s+(\w{3})\s+(\d{4}).*/,'$2 $1, $3') + '</span></a></li>';
+				return '<li><a href="' + post.link + '">' + post.title + '<span class="super-search__result-date">' + d.toUTCString().replace(/.*(\d{2})\s+(\w{3})\s+(\d{4}).*/, '$2 $1, $3') + '</span></a></li>';
 			}).join('');
 		}
 		lastSearchResultHash = currentResultHash;
@@ -108,7 +112,7 @@ MIT Licensed
 		searchInputEl = document.querySelector(options.inputSelector || '#js-super-search__input');
 		searchResultsEl = document.querySelector(options.resultsSelector || '#js-super-search__results');
 
-		var xmlhttp=new XMLHttpRequest();
+		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.open('GET', searchFile);
 		xmlhttp.onreadystatechange = function () {
 			if (xmlhttp.readyState != 4) return;
@@ -119,15 +123,11 @@ MIT Licensed
 		}
 		xmlhttp.send();
 
-		// Toggle on ESC key
-		window.addEventListener('keyup', function onKeyPress(e) {
-			if (e.which === 27) {
-				toggleSearch();
-			}
-		});
 		// Open on '/' key
 		window.addEventListener('keypress', function onKeyPress(e) {
-			if (e.which === 47 && !searchEl.classList.contains('is-active')) {
+			if (e.which === 83) {
+				dismissSearch();
+			} else if (e.which === 115 && !searchEl.classList.contains('is-active')) {
 				toggleSearch();
 			}
 		});

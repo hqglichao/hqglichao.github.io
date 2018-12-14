@@ -56,4 +56,15 @@
       }
     }
   })
+
+  window.addEventListener('keypress', function onKeyPress(e) {
+    if (e.which === 115) {
+      window.superSearch({
+				searchFile: '/feed.xml',
+				searchSelector: '#js-super-search',
+				inputSelector: '#js-super-search__input',
+				resultsSelector: '#js-super-search__results'
+			});
+    }
+  });
 }(jQuery)
