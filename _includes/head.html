@@ -3,9 +3,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	{% if page.title %}
-	  <title>{{ page.title | append: ' - ' |append: site.title }}</title>
+	<title>{{ page.title | append: ' - ' |append: site.title }}</title>
 	{% else %}
-	  <title>{{ site.title }}</title>
+	<title>{{ site.title }}</title>
 	{% endif %}
 
 	<link rel="shortcut icon" href="{{ '/styles/images/favicon.jpg' | prepend: site.baseurl }}">
@@ -14,10 +14,10 @@
 	<link rel="stylesheet" href="{{ '/styles/css/index.css' | prepend: site.baseurl }}">
 	<link rel="stylesheet" href="{{ '/styles/css/fontawesome/css/font-awesome.min.css' | prepend: site.baseurl }}">
 	<link rel="stylesheet" href="{{ '/styles/css/syntax.css' | prepend: site.baseurl }}">
-	<link rel="stylesheet" href="{{ '/styles/css/super-search.css' | prepend: site.baseurl }}">	
+	<link rel="stylesheet" href="{{ '/styles/css/super-search.css' | prepend: site.baseurl }}">
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl }}">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | prepend: site.baseurl }}">
-	
+
 	<meta name="keywords" content="{{ page.title | append: ', ' | append: site.title | append: ', ' | append: site.meta_description}}">
 	<meta name="description" content="{{site.meta_description}}">
 
@@ -25,18 +25,30 @@
 	<!--[if lt IE 9]>
     	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   	<![endif]-->
-  	<script>
+	<script>
 		var _hmt = _hmt || [];
-		(function() {
-		  var hm = document.createElement("script");
-		  hm.src = "//hm.baidu.com/hm.js?{{ site.baidu_analysis }}";
-		  var s = document.getElementsByTagName("script")[0]; 
-		  s.parentNode.insertBefore(hm, s);
+		(function () {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?{{ site.baidu_analysis }}";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
 		})();
 	</script>
-  	<style type="text/css">
-	  	.docs-content{
-	  		margin-bottom: 10px;
-	  	}
-  	</style>
+	<style type="text/css">
+		.docs-content {
+			margin-bottom: 10px;
+		}
+	</style>
+	<script>
+		function initSearch() {
+			console.log("initSearch.");
+			superSearch({
+				searchFile: '/feed.xml',
+				searchSelector: '#js-super-search',
+				inputSelector: '#js-super-search__input',
+				resultsSelector: '#js-super-search__results'
+			});
+			toggleSearch();
+		}
+	</script>
 </head>
