@@ -17,10 +17,15 @@ build.gradle debug
 
 1、 Run->Edit Configrations  
 2、 点击添加+  
-<div align=center>![添加remote debug](https://raw.githubusercontent.com/hqglichao/hqglichao.github.io/master/styles/images/gradle-debug-add.png)</div>  
+![点击添加示意图](https://raw.githubusercontent.com/hqglichao/hqglichao.github.io/master/styles/images/gradle-debug-add.png)  
 3、 点击确认OK  
 4、 ./gradlew aR -Dorg.gradle.debug=true  --no-daemon （会进入等待模式）  
 5、 点击debug按钮，attach调试  
 
 gradle 的调试
 =========================================
+
+在代码左边带运行的`icon`上点击，填写参数，在`jvm`那栏写入  
+```bash
+-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=1044
+```
