@@ -1,7 +1,7 @@
 ---
 layout: post
-title: build.gradle 的调试
-date: 2018-12-18 20:28:00 +0800
+title: Android 蓝牙状态监听及开启等示例
+date: 2018-12-24 20:10:00 +0800
 categories: Android
 tag: [bluetooth]
 ---
@@ -9,7 +9,7 @@ tag: [bluetooth]
 {:toc}
 
 
-build.gradle debug                     
+Android 蓝牙相关
 -----------------------------------------------
 
 ### 蓝牙状态检测
@@ -84,4 +84,4 @@ build.gradle debug
     ```
 
 ### 参考来源
->https://developer.android.com/guide/topics/connectivity/bluetooth
+>[https://developer.android.com/guide/topics/connectivity/bluetooth](https://developer.android.com/guide/topics/connectivity/bluetooth)
