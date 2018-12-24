@@ -2,30 +2,86 @@
 layout: post
 title: build.gradle 的调试
 date: 2018-12-18 20:28:00 +0800
-categories: gradle
-tag: debug
+categories: Android
+tag: [bluetooth]
 ---
 * content
 {:toc}
 
 
 build.gradle debug                     
-=========================================
+-----------------------------------------------
 
-`android studio`开发的`Android`项目，`build.gradle`不可或缺。
-编写过程中和app代码一样进行断点调试该怎么做呢。
-
-1、 Run->Edit Configrations  
-2、 点击添加+  
-![点击添加示意图](https://raw.githubusercontent.com/hqglichao/hqglichao.github.io/master/styles/images/gradle-debug-add.png)  
-3、 点击确认OK  
-4、 ./gradlew aR -Dorg.gradle.debug=true  --no-daemon （会进入等待模式）  
-5、 点击debug按钮，attach调试  
-
-gradle 的调试
-=========================================
-
-在代码左边带运行的`icon`上点击，填写参数，在`jvm`那栏写入  
+### 蓝牙状态检测
 ```bash
--agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=1044
+    private boolean checkBleOpen(Context context) {
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (mBluetoothAdapter == null) {
+            // Device does not support Bluetooth
+            LogUtil.e(Constants.TAG_V_520 + "device is not support Bluetooth.");
+            return false;
+        }
+        if (!mBluetoothAdapter.isEnabled()) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 ```
+
+### 开启蓝牙
+```bash
+    Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+    context.startActivity(enableBtIntent);
+```
+
+### 监听蓝牙状态
+* onCreate中
+  ```bash
+    broadcastReceiver = new BluetoothBroadcastReceiver(this);
+    registerReceiver(broadcastReceiver, getIntentFilter());
+  ```
+* onDestroy中
+  ```bash
+    unregisterReceiver(broadcastReceiver);
+  ```
+* 函数参考
+  ```bash
+      private IntentFilter getIntentFilter() {
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
+        return intentFilter;
+    }
+  ```
+
+  ```bash
+      public static class BluetoothBroadcastReceiver extends BroadcastReceiver {
+        private IStartWifiDisplay iStartWifiDisplay;
+
+        public BluetoothBroadcastReceiver(IStartWifiDisplay iStartWifiDisplay) {
+            this.iStartWifiDisplay = iStartWifiDisplay;
+        }
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if (action == null) {
+                LogUtil.e(Constants.TAG_V_520 + "receiver action is null.");
+                return;
+            }
+            switch (action) {
+                case BluetoothAdapter.ACTION_STATE_CHANGED:
+                    int blueState = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, 0);
+                    if (blueState == BluetoothAdapter.STATE_ON) {
+                        //TODO
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    ```
+
+### 参考来源
+>https://developer.android.com/guide/topics/connectivity/bluetooth
