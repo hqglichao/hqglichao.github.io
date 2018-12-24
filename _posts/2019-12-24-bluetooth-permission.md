@@ -9,10 +9,9 @@ tag: [bluetooth]
 {:toc}
 
 
-Android 蓝牙相关
------------------------------------------------
+# Android 蓝牙相关
 
-### 蓝牙状态检测
+## 蓝牙状态检测
 ```bash
     private boolean checkBleOpen(Context context) {
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -29,13 +28,13 @@ Android 蓝牙相关
     }
 ```
 
-### 开启蓝牙
+## 开启蓝牙
 ```bash
     Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
     context.startActivity(enableBtIntent);
 ```
 
-### 监听蓝牙状态
+## 监听蓝牙状态
 * onCreate中
   ```bash
     broadcastReceiver = new BluetoothBroadcastReceiver(this);
@@ -83,5 +82,5 @@ Android 蓝牙相关
     }
     ```
 
-### 参考来源
+## 参考来源
 >[https://developer.android.com/guide/topics/connectivity/bluetooth](https://developer.android.com/guide/topics/connectivity/bluetooth)
