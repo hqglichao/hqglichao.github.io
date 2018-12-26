@@ -32,7 +32,17 @@ tag: [bluetooth]
 ```bash
     Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
     context.startActivity(enableBtIntent);
+
+    或
+
+    startActivityForResult(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE), REQUEST_ENABLE_BT);
+
 ```
+以上两个调用方式在华为荣耀X2上会显示`某个应用想要开启蓝牙 `，以下方式可以弹出正确的引导框，并且在`6.0`之前可用于默认开启蓝牙：
+```bash
+    BluetoothAdapter.getDefaultAdapter().enable();
+```
+当然，如果用户拒绝了，会返回`false`，可以继续调用`方式1`。
 
 ## 监听蓝牙状态
 * onCreate中
@@ -46,7 +56,7 @@ tag: [bluetooth]
   ```
 * 函数参考
   ```bash
-      private IntentFilter getIntentFilter() {
+    private IntentFilter getIntentFilter() {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
         return intentFilter;
@@ -54,7 +64,7 @@ tag: [bluetooth]
   ```
 
   ```bash
-      public static class BluetoothBroadcastReceiver extends BroadcastReceiver {
+    public static class BluetoothBroadcastReceiver extends BroadcastReceiver {
         private IStartWifiDisplay iStartWifiDisplay;
 
         public BluetoothBroadcastReceiver(IStartWifiDisplay iStartWifiDisplay) {
