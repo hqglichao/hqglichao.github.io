@@ -88,3 +88,4 @@ SpannableString
     </intent-filter>
 </activity>
 ```
+>参考：[https://developer.android.com/guide/components/intents-filters](https://developer.android.com/guide/components/intents-filters)
