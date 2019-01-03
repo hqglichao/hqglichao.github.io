@@ -89,3 +89,14 @@ SpannableString
 </activity>
 ```
 >参考：[https://developer.android.com/guide/components/intents-filters](https://developer.android.com/guide/components/intents-filters)
+
+onTaskRemoved
+===================================
+当`service`关联的`Task`被移除的时候，会调用如下接口：
+```bash
+public void onTaskRemoved(Intent rootIntent) {
+}
+```
+如果app运行过程中开始了一个`service`，当用户手动杀手app的时候，会回调这个接口，可以在里面处理一些事情。  
+`Android O+`程序退后台之后，`service`一分钟后会被杀，会失效。  
+>参考：[https://stackoverflow.com/questions/21040339/how-to-know-when-my-app-has-been-killed](https://stackoverflow.com/questions/21040339/how-to-know-when-my-app-has-been-killed)
