@@ -61,3 +61,30 @@ SpannableString
   ```
 
 >使用`databinding`也可以使用`SpannableString`，只要在`ViewModel`里面返回的类型从`String`改成`SpannableString`就可以了。
+
+
+隐式 Intent
+====================================
+`隐式Intent`指的是：不会指定特定的组件，而是声明要执行的常规操作，从而允许其他应用中的组件来处理它。  
+如启动`activity`时：
+```bash
+    Intent sendIntent = new Intent();
+    sendIntent.setAction(Intent.ACTION_SEND);
+    sendIntent.putExtra(Intent.EXTRA_TEXT, sendMsg);
+    sendIntent.setType("text/plain");
+
+    if (sendIntent.resolveActivity(getPackageManager()) != null) {
+        startActivity(sendIntent);
+    }
+```
+会弹出一个列表让你选择想要打开的应用，如短信等  
+如果你想要成为一个以上的一个过滤器：
+```bash
+<activity android:name="ShareActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.SEND"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <data android:mimeType="text/plain"/>
+    </intent-filter>
+</activity>
+```
