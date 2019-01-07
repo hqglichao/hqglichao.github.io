@@ -14,18 +14,22 @@ init和constructor的不同
 ====================================
 `Kotlin`中的数据初始化有好几种方式，其中调用的方式是不同的。  
 ### Initializer
-* Property initializers
+构造函数外的数据初始化
+* **Property initializers**
   ```bash
   var name: String = "David"
   ```
-* Initializer blocks
+* **Initializer blocks**  
+  逻辑比较多时，可以这样初始化，用init包裹。
   ```bash
   init {
     /* do some setup here */
   }
-  ```
+  ```  
+
+
 ### Constructors
-如下代码中constructor。
+构造函数中的数据初始化，如下代码中constructor。
 ```bash
 open class Parent {
     private val a = println("Parent.a")
