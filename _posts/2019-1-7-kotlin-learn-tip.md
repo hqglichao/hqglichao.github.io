@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kotlin学习笔记
-date: 2018-1-7 18:25:00 +0800
+date: 2019-1-7 18:25:00 +0800
 categories: Kotlin
 tag: [Kotlin]
 ---
@@ -64,6 +64,3 @@ Kotlin中的companion object
 `companion object`可以有名字，也可以省略。如果省略，就默认`Companion`。  
 有点像`java`里面的`static`，但底层实现不一样。  
 >有用资料：[https://www.programiz.com/kotlin-programming/companion-objects](https://www.programiz.com/kotlin-programming/companion-objects)
-
-
-
