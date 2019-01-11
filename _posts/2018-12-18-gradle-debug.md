@@ -1,6 +1,6 @@
 ---
 layout: post
-title: build.gradle 的调试
+title: build.gradle 的断点调试
 date: 2018-12-18 20:28:00 +0800
 categories: gradle
 tag: debug
