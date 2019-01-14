@@ -53,3 +53,23 @@ FROM Customer;
 ```
 从表`Customer`中，抽出`First_name`、`Last_name`和`Country`这几列形成。
 >来源： [https://www.1keydata.com/tw/sql/sql-create-view.html](https://www.1keydata.com/tw/sql/sql-create-view.html)
+
+
+@Dao
+=====================================
+获得app的`Room`数据，`@Dao`解释的可以是`interface`，也可以是`abstract class`，会自动生成操作数据库的方法。有以下快捷操作方法：
+* **@Insert**  
+  用于直接插入数据，`onConlict`意思为`primary key`冲突的时候的解决方法
+  ```bash
+  @Insert(onConflict = OnConflictStrategy.REPLACE)
+  ```
+* **@Update**  
+  用于更新数据
+* **@Delete**  
+  用于删除数据
+* **@Query**  
+  可用于读/写数据库
+  ```bash
+  @Query("SELECT * FROM user")
+  ```
+
