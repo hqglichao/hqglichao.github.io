@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Android Architecture Components Room
+title: Answer Of Android Related Question
 date: 2019-1-22 20:15:00 +0800
 categories: Android
 tag: [Answer, Question]
@@ -29,4 +29,29 @@ at com.android.builder.profile.ThreadRecorder.record(ThreadRecorder.java:102)
 ......
 ```
 
+UnsatisfiedLinkError
+==============================================
+调用`System.loadLibrary("***");`时，如果找不到相应的`lib***.so`文件，就会报这个错误。  
+首先要确保自己的`so`文件正确的放在`libs`文件夹下面的`armeabi`等目录下。  
+其次要确保自己的`so`文件打包进自己的`apk`（把`apk`解压了看看）
+如果`apk`里面没有打包进`so`文件，需要在`build.gradle`中添加：
+```bash
+android {
+    compileSdkVersion 28
+    ...
+    //添加如下代码
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+```
 
+这个错误报错代码如下：
+```bash
+java.lang.UnsatisfiedLinkError: dalvik.system.PathClassLoader[DexPathList[[zip file...
+at java.lang.Runtime.loadLibrary(Runtime.java:379)
+at java.lang.System.loadLibrary(System.java:1086)
+...
+```
