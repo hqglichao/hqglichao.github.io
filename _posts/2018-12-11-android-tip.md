@@ -3,7 +3,7 @@ layout: post
 title: Android 小Tip
 date: 2018-12-11 17:16:00 +0800
 categories: Android
-tag: [View, TouchEvent]
+tag: [View, TouchEvent, Tip]
 ---
 
 * content

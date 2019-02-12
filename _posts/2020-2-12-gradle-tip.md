@@ -1,30 +1,19 @@
 ---
 layout: post
-title: DataBinding 入门简介
-date: 2019-1-31 20:25:00 +0800
-categories: DataBinding
-tag: [DataBinding]
+title: gradle 学习笔记
+date: 2019-2-12 15:20:00 +0800
+categories: gradle
+tag: [Gradle, Tip]
 ---
 
 * content
 {:toc}
 
 
-DataBinding使用准备
+gradle学习
 =======================================
-在`app`的`build.gradle`里面添加
-```
-android {
-    ...
-    dataBinding {
-        enabled = true
-    }
-}
-```
-某些版本`android studio`需要在`gradle.properties`文件中添加
-```bash
-android.databinding.enableV2=true
-```
-有了这些sync一下就可以开始使用了
+先安装`gradle`，确保本地`JAVA_HOME`对应`java`版本高于8。  
+>参考：[https://docs.gradle.org/current/userguide/installation.html#installing_gradle](https://docs.gradle.org/current/userguide/installation.html#installing_gradle)
+
 
 
