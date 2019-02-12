@@ -105,3 +105,8 @@ implementation VS api
 ====================================
 `gradle`中使用`implementation`和`api`的区别主要体现在编译速度，和子引用可不可以在主项目中使用上（`api`声明的主项目中可以用lib里面的引用库内容，而`implementation`声明的不可以）。
 >参考文章：[https://medium.com/mindorks/implementation-vs-api-in-gradle-3-0-494c817a6fa](https://medium.com/mindorks/implementation-vs-api-in-gradle-3-0-494c817a6fa)
+
+
+混淆
+===================================
+>[https://jebware.com/blog/?p=418](https://jebware.com/blog/?p=418)
