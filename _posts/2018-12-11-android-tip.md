@@ -110,3 +110,18 @@ implementation VS api
 混淆
 ===================================
 >[https://jebware.com/blog/?p=418](https://jebware.com/blog/?p=418)
+
+
+Usb Device no permission
+===================================
+手机连接linux设备电脑，不能操作手机，或者`android studio`安装设备时显示`null`。  
+解决方法：
+```bash
+sudo gedit /etc/udev/rules.d/51-android.rules
+```
+**添加**  
+```bash
+SUBSYSTEM=="usb", ATTR{idVendor}=="USB_ID", MODE="0666", GROUP="plugdev"
+```
+USB_ID：这个值填`lsusb`中显示的对应的设备的"："前的4位数。如`Huawei`是`12d1`。  
+>参考：[https://developer.android.com/studio/run/device](https://developer.android.com/studio/run/device)
