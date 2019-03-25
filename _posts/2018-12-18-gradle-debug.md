@@ -38,3 +38,4 @@ gradle 的调试
 ./gradlew --no-daemon -Dorg.gradle.debug=true :app:clean :app:compileDebugJavaWithJavac
 ```
 然后创建一个`Remote`的编译调试，然后点击`debug`按钮，attach调试。
+>参考：[https://blog.xmartlabs.com/2016/03/28/Debugging-an-Annotator-Processor-in-your-project/](https://blog.xmartlabs.com/2016/03/28/Debugging-an-Annotator-Processor-in-your-project/)
