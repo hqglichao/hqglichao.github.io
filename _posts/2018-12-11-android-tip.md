@@ -115,7 +115,8 @@ implementation VS api
 Usb Device no permission
 ===================================
 手机连接linux设备电脑，不能操作手机，或者`android studio`安装设备时显示`null`。  
-解决方法：
+解决方法：  
+**打开**
 ```bash
 sudo gedit /etc/udev/rules.d/51-android.rules
 ```
@@ -125,3 +126,19 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="USB_ID", MODE="0666", GROUP="plugdev"
 ```
 USB_ID：这个值填`lsusb`中显示的对应的设备的"："前的4位数。如`Huawei`是`12d1`。  
 >参考：[https://developer.android.com/studio/run/device](https://developer.android.com/studio/run/device)
+
+
+更改Project名
+===================================
+1、 先重命名目录，然后导入  
+2、 将`*.iml`和其中内容中的老名字替换为新名字  
+3、 包目录上右键`Refactor`，重新命名包名
+
+没有存储权限时的缓存
+===================================
+`getExternalFilesDir`这个在`6.0`以上版本需要**动态请求权限**，而`getCacheDir`这个不需要。
+这两个都能获得缓存路径，路径有所不同：
+```bash  
+getExternalFilesDir：/storage/emulated/** (用于长久储存)
+getCacheDir: /data/user/**
+```

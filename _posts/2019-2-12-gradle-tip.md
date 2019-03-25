@@ -17,3 +17,13 @@ gradle学习
 
 
 
+## configure()
+The [configure()](https://docs.gradle.org/5.2.1/userguide/multi_project_builds.html#ssub:filtering_by_name) method takes a list as an argument and applies the configuration to the projects in this list.  
+### [Subproject configuration](https://docs.gradle.org/5.2.1/userguide/multi_project_builds.html#sec:subproject_configuration)
+
+
+## dependency locking 
+优先使用已经解析的版本，这个在使用动态依赖的时候有用处，不至于不能复现bug，频繁更新导致的不稳定。
+
+## Customizing dependency
+几种不同的实现更改`dependency`的方式  [https://docs.gradle.org/5.2.1/userguide/customizing_dependency_resolution_behavior.html](https://docs.gradle.org/5.2.1/userguide/customizing_dependency_resolution_behavior.html)
