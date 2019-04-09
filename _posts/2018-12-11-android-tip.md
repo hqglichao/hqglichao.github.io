@@ -142,3 +142,73 @@ USB_ID：这个值填`lsusb`中显示的对应的设备的"："前的4位数。�
 getExternalFilesDir：/storage/emulated/** (用于长久储存)
 getCacheDir: /data/user/**
 ```
+
+宽/高自适应Fresco
+===================================
+```bash
+public static void loadImageWithAutoHeight(final SimpleDraweeView view, String path, final int imgWidth, final int radius) {
+        LogUtil.d(Constants.TAG_V_525 +"path===" + path);
+        if (view == null) {
+            return;
+        }
+
+        ControllerListener<ImageInfo> controllerListener = 
+        new ControllerListener<ImageInfo>() {
+            @Override
+            public void onSubmit(String s, Object o) {
+
+            }
+
+            @Override
+            public void onFinalImageSet(String s, 
+            @Nullable ImageInfo imageInfo, 
+            @Nullable Animatable animatable) {
+                if (imageInfo == null) {
+                    LogUtil.e(Constants.TAG_V_525 + " error: imageInfo is null.");
+                    return;
+                }
+                int height = imageInfo.getHeight();
+                int width = imageInfo.getWidth();
+                ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+                layoutParams.width = imgWidth;
+                layoutParams.height = 
+                (int) ((float)(imgWidth * height) / (float) width);
+                view.setLayoutParams(layoutParams);
+
+                if (radius > 0) {
+                    RoundingParams roundingParams = 
+                    RoundingParams.fromCornersRadius(radius);
+                    view.getHierarchy().setRoundingParams(roundingParams);
+                }
+            }
+
+            @Override
+            public void onIntermediateImageSet(String s, 
+            @Nullable ImageInfo imageInfo) {
+
+            }
+
+            @Override
+            public void onIntermediateImageFailed(String s,
+             Throwable throwable) {
+
+            }
+
+            @Override
+            public void onFailure(String s, Throwable throwable) {
+
+            }
+
+            @Override
+            public void onRelease(String s) {
+
+            }
+        };
+        Uri uri = Uri.parse(path);
+        view.setController(Fresco
+                .newDraweeControllerBuilder()
+                .setControllerListener(controllerListener)
+                .setUri(uri)
+                .build());
+    }
+```

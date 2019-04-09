@@ -32,3 +32,13 @@ android.databinding.enableV2=true
 `databinding`的好处是数据和`view`绑定在一起的，做好前期关联工作后，我们只需要关心对数据的更新即可。数据更新后，底层代码会主动调用`notify`通知`view`数据变化了（_观察者模式，此时View相当于数据的一个观察者_），`view`的显示也就更新了。  
 一般是一个`xml`布局关联一个特定的`ViewModel`对象，`ViewModel`对象控制着数据的改变。  
 `ViewModel`可以是继承`BaseObservable`，在数据更新时调用`notifyPropertyChanged(BR.specificName)`。或者不需要继承类，通过使用`ObservableField`之类的数据，在数据变化时，调用`.set`之类的方法实现。这是两种方式，第二种方式比较灵活，因为不需要继承任何父类，这样可以有继承其他类的可能性。
+
+好用的库
+=======================================
+>[https://github.com/evant/binding-collection-adapter](https://github.com/evant/binding-collection-adapter)  
+使用上面的库写`ListView RecyclerView`等时，可以省略写adpter，比较方便。  
+`<data></data>`中可以有多个`<variable>`。
+```bash
+Itembinding.of(variableId, layout); // 可以给layout绑定一个ViewModel
+itemBinding.bindExtra(variableId, variableValue); //另外指定一个变量
+```
