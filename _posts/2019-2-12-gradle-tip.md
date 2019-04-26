@@ -27,3 +27,6 @@ The [configure()](https://docs.gradle.org/5.2.1/userguide/multi_project_builds.h
 
 ## Customizing dependency
 几种不同的实现更改`dependency`的方式  [https://docs.gradle.org/5.2.1/userguide/customizing_dependency_resolution_behavior.html](https://docs.gradle.org/5.2.1/userguide/customizing_dependency_resolution_behavior.html)
+
+## 构建流程
+[https://www.jianshu.com/p/cc88488e5163](https://www.jianshu.com/p/cc88488e5163)

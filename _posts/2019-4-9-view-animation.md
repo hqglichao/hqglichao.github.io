@@ -116,7 +116,9 @@ Scene
 
 不同Scene可以通过`TransitionManager.go()`来进行切换，如果两个Scene中不同东西较多，可以`addTarget()`来指定要施加动画的对象。  
 转场动画以之前动画的结尾帧为开始，如果没有指定可能就是当前的用户界面。  
-`TransitionManager.beginDelayedTransition()`这个可以用于不与scene关联的转场动画，适合于当前view的设置visible等情景。
+`TransitionManager.beginDelayedTransition()`这个可以用于不与scene关联的转场动画，适合于当前view的设置visible等情景。  
+可以在第二个参数传入的Transition中设置targetView施加动画，在view没有解析之前可以使用`transition.excludeChildren(layoutId, true)`，来排除指定id的view
+在之后的变化中产生动画。
 
 xml anim动效
 ====================================

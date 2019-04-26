@@ -55,3 +55,20 @@ at java.lang.Runtime.loadLibrary(Runtime.java:379)
 at java.lang.System.loadLibrary(System.java:1086)
 ...
 ```
+
+
+google()找不到
+===========================================
+Could not find method google() for arguments [] on repository container
+这个是因为`gradle-wrapper.properties`这个文件夹里面设置的Gradle版本太低了，这个google库简单支持是从Gradle4.1开始的，可以升级Gradle版本，或者替换成：
+```bash
+maven {
+    url 'https://maven.google.com'
+}
+```
+
+Minimum supported Gradle version
+===============================================
+Minimum supported Gradle version is 3.3. Current version is 2.14.1.
+一定是Gradle的版本和classpath里面的tools.build版本不匹配了，2.14.1最高支持2.2.0版的工具。  
+对应关系如下链接：[https://developer.android.com/studio/releases/gradle-plugin](https://developer.android.com/studio/releases/gradle-plugin)
