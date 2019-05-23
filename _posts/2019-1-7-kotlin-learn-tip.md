@@ -159,3 +159,63 @@ run, with, let, also 和 apply
         Intent().apply { action = intentAction }
                 .apply { data = Uri.parse(intentData) }
   ```
+
+Lambda in Kotlin
+====================================
+Kotlin中的Lambda用到的地方很多，用好Lambda能省下不少代码。  
+Lambdas表达式其实是匿名函数，我们可以把它作为一个变量来处理，当成一个参数传入另一个高级函数等等。    
+正常的一个lambda定义是这样的:
+```bash
+var func: (String) -> String = {in -> out}
+```
+(String) -> String 表示传入函数有一个String类型的参数，函数返回值为String。当然这部分kotlin里面是可以省略的，也就是变成了：
+```bash
+var func = {in -> out}
+```
+Lambda唯一不能省的是函数体， 就是`->`符合后面的部分，函数体的最后一行就是返回的值。  
+只有一个参数时传入参数的变量名也是可以省的，系统有默认的`it`，所以上述定义又可以简化为：
+```bash
+var func = {out}
+```
+结合最近使用的RxAndroid举一个稍微复杂一点的例子  
+比如对RxAndroid中`map`功能的调用，map函数源码为：
+```bash
+public final <R> Observable<R> map(Function<? super T, ? extends R> mapper) {
+    ...//省略不关键代码
+}
+```
+常见的类似java中不使用Lambda的调用：
+```bash
+map(MyFunction())
+
+private class MyFunction : Function<WeatherModel.Result, WeatherModel.WeatherInfo> {
+    override fun apply(t: WeatherModel.Result): WeatherModel.WeatherInfo {
+        return t.weatherinfo
+    }
+}
+```
+初步使用Lambda后应该是这样的：
+```bash
+map(function)
+val function = Function<WeatherModel.Result, WeatherModel.WeatherInfo> { 
+    result -> result.weatherinfo
+}
+```
+不使用变量直接嵌入map中：
+```bash
+map({
+  result -> result.weatherinfo
+})
+```
+省略传入变量名：
+```bash
+map({it.weatherinfo})
+```
+此外，推荐函数的最后一个Lambda参数放`()`外面，因为只有一个参数`()`也是可以省的，所以就变成了：
+```bash
+map {
+  it.weatherinfo
+}
+```
+很好玩是不是！
+>参考文章：[https://www.baeldung.com/kotlin-lambda-expressions](https://www.baeldung.com/kotlin-lambda-expressions)
