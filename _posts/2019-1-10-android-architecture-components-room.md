@@ -11,6 +11,8 @@ tag: [Architecture Components, Room]
 
 >本文所有内容扩展自阅读：[https://developer.android.com/training/data-storage/room/](https://developer.android.com/training/data-storage/room/)
 
+>不错的相关文章： [https://medium.com/androiddevelopers/7-pro-tips-for-room-fbadea4bfbd1](https://medium.com/androiddevelopers/7-pro-tips-for-room-fbadea4bfbd1)
+
 
 @AutoValue
 ====================================
