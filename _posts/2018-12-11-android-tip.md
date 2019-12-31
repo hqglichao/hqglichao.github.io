@@ -212,3 +212,30 @@ public static void loadImageWithAutoHeight(final SimpleDraweeView view, String p
                 .build());
     }
 ```
+
+全机型16:9图片适应
+===================================
+```bash
+    ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) itemView.getLayoutParams();
+    ViewGroup parentView = (ViewGroup) itemView.getParent();
+    int padding = ViewUtils.dip2px(10); // GridView 纵向 Padding, 同 ae_camera_video_story_play_page_view.xml 中的数值;
+    int itemWidth = ViewUtils.getScreenWidth() - padding * 2;
+    int itemHeight = parentView.getHeight() - padding;
+
+    if (itemWidth * 16 / 9 > itemHeight) {
+        itemWidth = itemHeight * 9 / 16;
+    } else {
+        itemHeight = itemWidth * 16 / 9;
+    }
+    layoutParams.width = itemWidth;
+    layoutParams.height = itemHeight;
+    padding += (parentView.getWidth() - itemWidth - padding * 2) / 2; // GridView两边的padding
+
+    if (QLog.isDevelopLevel()) {
+        QLog.d(TAG, QLog.DEV, "one itemHeight " + itemHeight + " itemWidth: " + itemWidth +
+        " screenWidth: " + ViewUtils.getScreenWidth() + " viewWidth: " + parentView.getWidth() + " padding: " + padding);
+    }
+
+    itemView.setLayoutParams(layoutParams);
+    parentView.setPadding(padding, 0, 0, 0);
+```
