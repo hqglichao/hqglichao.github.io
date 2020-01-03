@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Android ANR 的实例分析
-date: 2019-12-9 21:12:00 +0800
+date: 2019-12-31 20:12:00 +0800
 categories: 技术文章
 tag: [Android ANR]
 ---
