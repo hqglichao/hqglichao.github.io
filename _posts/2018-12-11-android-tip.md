@@ -49,7 +49,7 @@ SpannableString
 
 用`SpannableString`使`TextView`中的某部分字体改变颜色，或添加点击事件  
 * 改变颜色  
-  ```bash
+  ```java
   SpannableString spannableString = new SpannableString(subTitle);
   spannableString.setSpan(new ForegroundColorSpan(color), index, lastInex + 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
   tvTextView.setText(spannableString);
@@ -67,7 +67,7 @@ SpannableString
 ====================================
 `隐式Intent`指的是：不会指定特定的组件，而是声明要执行的常规操作，从而允许其他应用中的组件来处理它。  
 如启动`activity`时：
-```bash
+```java
     Intent sendIntent = new Intent();
     sendIntent.setAction(Intent.ACTION_SEND);
     sendIntent.putExtra(Intent.EXTRA_TEXT, sendMsg);
@@ -79,7 +79,7 @@ SpannableString
 ```
 会弹出一个列表让你选择想要打开的应用，如短信等  
 如果你想要成为一个以上的一个过滤器：
-```bash
+```java
 <activity android:name="ShareActivity">
     <intent-filter>
         <action android:name="android.intent.action.SEND"/>
@@ -145,7 +145,7 @@ getCacheDir: /data/user/**
 
 宽/高自适应Fresco
 ===================================
-```bash
+```java
 public static void loadImageWithAutoHeight(final SimpleDraweeView view, String path, final int imgWidth, final int radius) {
         LogUtil.d(Constants.TAG_V_525 +"path===" + path);
         if (view == null) {
@@ -215,7 +215,7 @@ public static void loadImageWithAutoHeight(final SimpleDraweeView view, String p
 
 全机型16:9图片适应
 ===================================
-```bash
+```java
     ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) itemView.getLayoutParams();
     ViewGroup parentView = (ViewGroup) itemView.getParent();
     int padding = ViewUtils.dip2px(10); // GridView 纵向 Padding, 同 ae_camera_video_story_play_page_view.xml 中的数值;
@@ -231,11 +231,51 @@ public static void loadImageWithAutoHeight(final SimpleDraweeView view, String p
     layoutParams.height = itemHeight;
     padding += (parentView.getWidth() - itemWidth - padding * 2) / 2; // GridView两边的padding
 
-    if (QLog.isDevelopLevel()) {
-        QLog.d(TAG, QLog.DEV, "one itemHeight " + itemHeight + " itemWidth: " + itemWidth +
+    if (Log.isDevelopLevel()) {
+        Log.d(TAG, QLog.DEV, "one itemHeight " + itemHeight + " itemWidth: " + itemWidth +
         " screenWidth: " + ViewUtils.getScreenWidth() + " viewWidth: " + parentView.getWidth() + " padding: " + padding);
     }
 
     itemView.setLayoutParams(layoutParams);
     parentView.setPadding(padding, 0, 0, 0);
+```
+
+View的animate()使用
+===================================
+```java
+vAnimView.animate().setDuration(200).alpha(0f).start();  
+```
+可以通过设置时间+动画类型直接开始
+
+AnimatorSet使用
+===================================
+```java
+AnimatorSet animatorSet = new AnimatorSet();
+ValueAnimator text1AppearAni = ValueAnimator.ofInt(10, 0);
+text1AppearAni.setDuration(1000);
+text1AppearAni.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+    @Override
+    public void onAnimationUpdate(ValueAnimator animation) {
+    }
+});
+ValueAnimator text2AppearAni = ValueAnimator.ofInt(-22, 0);
+text2AppearAni.setDuration(1000);
+text2AppearAni.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+    @Override
+    public void onAnimationUpdate(ValueAnimator animation) {
+    }
+});
+ValueAnimator dismissAni = ValueAnimator.ofFloat(0f, 1f);
+dismissAni.setDuration(1000);
+dismissAni.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+    @Override
+    public void onAnimationUpdate(ValueAnimator animation) {
+    }
+});
+
+//串联动画
+animatorSet.play(text1AppearAni)
+        .with(text2AppearAni)
+        .with(resultDividerAppearAni)
+        .before(dismissAni);
 ```
