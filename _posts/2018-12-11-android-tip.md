@@ -279,3 +279,8 @@ animatorSet.play(text1AppearAni)
         .with(resultDividerAppearAni)
         .before(dismissAni);
 ```
+
+
+TextView去除上下空边距
+===================================
+android:includeFontPadding="false"
