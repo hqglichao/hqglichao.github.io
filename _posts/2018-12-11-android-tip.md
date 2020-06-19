@@ -284,3 +284,11 @@ animatorSet.play(text1AppearAni)
 TextView去除上下空边距
 ===================================
 android:includeFontPadding="false"
+
+GridLayoutManager的坑
+===================================
+GridLayoutManager + RecyclerView在调用notifyItemChange的时候会刷新回顶部
+解决方案：
+gridLayoutManager.setAutoMeasureEnabled(false);
+
+>参考：https://stackoverflow.com/questions/36724898/notifyitemchanged-make-the-recyclerview-scroll-and-jump-to-up
