@@ -1,3 +1,12 @@
+---
+layout: post
+title: Android ViewPager pos
+date: 2020-5-13 10:58:00 +0800
+categories: 技术文章
+tag: [Android 9-patch]
+---
+
+
 # ViewPager中RecyclerView的定位
 
 
