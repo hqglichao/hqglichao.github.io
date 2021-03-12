@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Android xml animation
-date: 2020-3-12 14:58:00 +0800
+title: Android 使用TransitionDrawable的组合动画
+date: 2021-3-12 14:58:00 +0800
 categories: 技术文章
 tag: [Android Xml Animation TransitionDrawable]
 ---
