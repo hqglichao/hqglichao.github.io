@@ -291,4 +291,11 @@ GridLayoutManager + RecyclerView在调用notifyItemChange的时候会刷新回�
 解决方案：
 gridLayoutManager.setAutoMeasureEnabled(false);
 
->参考：https://stackoverflow.com/questions/36724898/notifyitemchanged-make-the-recyclerview-scroll-and-jump-to-up
+>参考：https://stackoverflow.com/questions/36724898/notifyitemchanged-make-the-recyclerview-scroll-and-jump-to-up  
+
+
+替换纯色图标的颜色
+===================================
+```java
+view.setColorFilter(Color.GRAY, PorterDuff.Mode.SRC_IN)
+```
