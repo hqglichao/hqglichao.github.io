@@ -8,4 +8,4 @@ tag: [Android vector Animation AnimatedVectorDrawable]
 
 
 ## 动画效果简介
-<img src="https://github.com/hqglichao/hqglichao.github.io/raw/master/styles/gif/vector_anim.gif"/>  
+<img src="https://github.com/hqglichao/hqglichao.github.io/raw/master/styles/gif/vector_anim.gif"/>
