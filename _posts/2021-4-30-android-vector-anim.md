@@ -129,4 +129,4 @@ shapeshifter的界面上图所示，就我们这个动画而言，左边的层�
 ```
 
 > 参考文献：  
-> 1. https://www.androiddesignpatterns.com/2016/11/introduction-to-icon-animation-techniques.html#drawing-paths
+> 1. [https://www.androiddesignpatterns.com/2016/11/introduction-to-icon-animation-techniques.html#drawing-paths](https://www.androiddesignpatterns.com/2016/11/introduction-to-icon-animation-techniques.html#drawing-paths)
