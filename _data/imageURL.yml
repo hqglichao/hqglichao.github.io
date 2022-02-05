@@ -1,0 +1,4 @@
+- name: AnimatedVectorDrawable
+  vector_anim: https://picgo-1307686581.cos.ap-shanghai.myqcloud.com/github/hqglichao/gif/vector_anim.gif
+  svg_round: https://picgo-1307686581.cos.ap-shanghai.myqcloud.com/github/hqglichao/imagessvg_round.png
+  image3: https://picgo-1307686581.cos.ap-shanghai.myqcloud.com/github/hqglichao/imagesshapeshifter.png

@@ -6,18 +6,17 @@ categories: 技术文章
 tag: [Android vector Animation AnimatedVectorDrawable]
 ---
 
-
 ## 动画效果简介  
 我们在Android App开发过程中，动画是经常接触的，实现动画的方式也多种多样。比如AnimationSet/Animation/Lottie等。
 用AnimationSet可以实现一些简单组合动画，也可以自定义View在onDraw函数里面画各种花样。但自定义View的代码量和复杂度都不足以让一个想偷懒的Coder有任何偷懒的机会。写代码久了后，给一个动画后常常会想有没有更简洁的方式来实现一个设计要求的动画，而且又不让动画过于侵入我们的业务代码。  
 下面要介绍的是用**AnimatedVectorDrawable**来实现的，圆形渐变矩形的一种矢量动画。
 先来看下实现的动画效果，如下所示  
 
-<img src="https://github.com/hqglichao/hqglichao.github.io/raw/master/styles/gif/vector_anim.gif" height="400" width="200"/>  
+<img src="https://picgo-1307686581.cos.ap-shanghai.myqcloud.com/github/hqglichao/gif/vector_anim.gif" height="400" width="200"/>    
 
 动画本身不难，就是一个从小圆变成大圆透明度逐渐增大，到一定程度后拉伸成矩形的一个过程。  
 我们可以用AnimatedVectorDrawable来实现这个矢量动画，但并不需要亲自写这个xml文件，有个网站可以实现这个矢量动画的在线编辑和导出xml。  
-网站地址：https://shapeshifter.design/  
+网站地址：[https://shapeshifter.design/](https://shapeshifter.design/)  
 
 ### 1. 画svg矢量图 
 首先简单介绍一下这个怎么画一个矢量图，如下表所述
@@ -28,11 +27,11 @@ tag: [Android vector Animation AnimatedVectorDrawable]
 |  C x1,y1 x2,y2 x,y    | 画贝塞尔曲线，终点（x,y），控制点（x1,y1）和（x2,y2）
 |  Z                    | 画一条线到起点，闭合当前线路| 
 可以用贝塞尔曲线来拟合圆，可以看下图用贝塞尔曲线来拟合一个圆：  
-<img src="https://github.com/hqglichao/hqglichao.github.io/raw/master/styles/images/svg_round.png"/>  
+<img src="https://picgo-1307686581.cos.ap-shanghai.myqcloud.com/github/hqglichao/imagessvg_round.png"/>  
 
 ### 2. shapeshifter网站生成xml
 简单介绍一下[shapeshifter](https://shapeshifter.design/)的用法  
-<img src="https://github.com/hqglichao/hqglichao.github.io/raw/master/styles/images/shapeshifter.png"/>    
+<img src="https://picgo-1307686581.cos.ap-shanghai.myqcloud.com/github/hqglichao/imagesshapeshifter.png"/>    
 shapeshifter的界面上图所示，就我们这个动画而言，左边的层级结构里有一个group，group下面有个path，path里面有两个属性`pathData`和`fillAlpha`。选中pathData可以在右上属性编辑区，编辑开始和结束的svg路径，再指定一个过渡动画，就可以实现开始到结束的动画。给`fillAlpha`指定属性，在动画编辑区，通过调整轨道时间，就可以实现形状透明度的混合叠加动画。  
 此外path还支持strokeColoe等其他属性。  
 我们这个动画可以分成两个部分

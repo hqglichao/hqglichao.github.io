@@ -11,7 +11,7 @@ tag: [Android Xml Animation TransitionDrawable]
 我们在Android App开发过程中，动画是经常接触的，实现动画的方式也多种多样。比如AnimationSet/Animation/Lottie等。
 这篇文章主要是想介绍一个圆形（或其他形状）的layout在放大的过程中，背景颜色也逐渐变化的一个动画。
 先来看下要实现的动画效果  
-<img src="https://github.com/hqglichao/hqglichao.github.io/raw/master/styles/gif/transition_animation.gif"/>  
+<img src="https://picgo-1307686581.cos.ap-shanghai.myqcloud.com/github/hqglichao/gif/transition_animation.gif"/>  
 
 话不多说，直接上代码  
 **布局文件**

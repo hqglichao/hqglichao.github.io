@@ -14,12 +14,12 @@ tag: [Android 9-patch]
 
 下图是一个比较典型的9图示例：  
 
-![9图例子](https://raw.githubusercontent.com/hqglichao/hqglichao.github.io/master/styles/images/ninepatch_raw.png)   
+![9图例子](https://picgo-1307686581.cos.ap-shanghai.myqcloud.com/github/hqglichao/imagesninepatch_raw.png)   
 
 
 填充内容后：  
 
-![9图填充内容后](https://raw.githubusercontent.com/hqglichao/hqglichao.github.io/master/styles/images/ninepatch_examples.png)     
+![9图填充内容后](https://picgo-1307686581.cos.ap-shanghai.myqcloud.com/github/hqglichao/imagesninepatch_examples.png)     
 
 -------------  
 >参考文章：[https://developer.android.com/guide/topics/graphics/drawables#nine-patch](https://developer.android.com/guide/topics/graphics/drawables#nine-patch)

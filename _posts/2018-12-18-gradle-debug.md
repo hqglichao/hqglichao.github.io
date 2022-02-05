@@ -17,7 +17,7 @@ build.gradle debug
 
 1、 Run->Edit Configrations  
 2、 点击添加+  
-![点击添加示意图](https://raw.githubusercontent.com/hqglichao/hqglichao.github.io/master/styles/images/gradle-debug-add.png)  
+![点击添加示意图](https://picgo-1307686581.cos.ap-shanghai.myqcloud.com/github/hqglichao/imagesgradle-debug-add.png)  
 3、 点击确认OK  
 4、 ./gradlew aR -Dorg.gradle.debug=true  --no-daemon （会进入等待模式）  
 5、 点击debug按钮，attach调试  
