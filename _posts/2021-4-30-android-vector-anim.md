@@ -27,7 +27,7 @@ tag: [Android vector Animation AnimatedVectorDrawable]
 |  C x1,y1 x2,y2 x,y    | 画贝塞尔曲线，终点（x,y），控制点（x1,y1）和（x2,y2）
 |  Z                    | 画一条线到起点，闭合当前线路| 
 可以用贝塞尔曲线来拟合圆，可以看下图用贝塞尔曲线来拟合一个圆：  
-<img src="https://picgo-1307686581.cos.ap-shanghai.myqcloud.com/github/hqglichao/imagessvg_round.png"/>  
+<img src="https://picgo-1307686581.cos.ap-shanghai.myqcloud.com/github/hqglichao/imagessvg_round.png" style="zoom:60%;"/>  
 
 ### 2. shapeshifter网站生成xml
 简单介绍一下[shapeshifter](https://shapeshifter.design/)的用法  

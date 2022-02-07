@@ -13,7 +13,7 @@ tag: [观察者模式]
 移动端编程中经常会用到ViewPager，容纳很多数据每个页面可能又是一个RecyclerView。如果RecyclerView的每个item想要有一个下载进度条，并且这个进度条要有记忆逻辑，就是item回收或者复用之后回来，状态能根据下载的进度实时更新显示，这个问题就有点烦了。  
 这篇文章讲的解决方案是把每个item当成一个observer，然后自由的监听。  
 ViewPager+RecyclerView的数据流组装形式比较常见。如下所示:  
-<img src="https://picgo-1307686581.cos.ap-shanghai.myqcloud.com/github/hqglichao/gif/progress_observer.gif"/>  
+<img src="https://picgo-1307686581.cos.ap-shanghai.myqcloud.com/github/hqglichao/gif/progress_observer.gif" style="zoom:80%;"/>  
 上面动图中：  
 
 1. 先是点击多个item下载，出现了进度条
