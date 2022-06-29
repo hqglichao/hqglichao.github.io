@@ -18,8 +18,8 @@ github_username: hqglichao
 
 # Build settings
 markdown: kramdown
-
 kramdown:
-  input: GFM
+    input: GFM
+highlighter: rouge
 
 baidu_analysis: d45e57342a97903c697716b06f129b82
