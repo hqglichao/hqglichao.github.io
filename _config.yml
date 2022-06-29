@@ -17,6 +17,10 @@ exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
 github_username: hqglichao
 
 # Build settings
-markdown: kramdown
+# markdown: kramdown
 
 baidu_analysis: d45e57342a97903c697716b06f129b82
+
+markdown: redcarpet
+redcarpet:
+    extensions: ["fenced_code_blocks", "tables", "highlight", "with_toc_data", "strikethrough", "underline"]
