@@ -12,9 +12,9 @@ tag: [Android]
 
 api级别官方描述地址
 =======================================
-[https://source.android.com/setup/start/build-numbers](https://source.android.com/setup/start/build-numbers)
+[https://source.android.com/setup/start/build-numbers](https://source.android.com/setup/start/build-numbers)  
 | 代号               | 版本          | API 级别/NDK 版本  |
-| :----------------- | :------------ | :----------------- |
+| ----------------- | ------------ | ----------------- |
 | Android12L         | 12            | API 级别 32        |
 | Android12          | 12            | API 级别 31        |
 | Android11          | 11            | API 级别 30        |
@@ -49,9 +49,9 @@ api级别官方描述地址
 
 gradle版本和插件版本的对应关系
 =======================================
-[https://developer.android.com/studio/releases/gradle-plugin?hl=zh-cn](https://developer.android.com/studio/releases/gradle-plugin?hl=zh-cn)
+[https://developer.android.com/studio/releases/gradle-plugin?hl=zh-cn](https://developer.android.com/studio/releases/gradle-plugin?hl=zh-cn)  
 | 插件版本      | 所需的 Gradle 版本 |
-| :------------ | :----------------- |
+| ------------ | ---------------- |
 | 1.0.0 - 1.1.3 | 2.2.1 - 2.3        |
 | 1.2.0 - 1.3.1 | 2.2.1 - 2.9        |
 | 1.5.0         | 2.2.1 - 2.13       |
