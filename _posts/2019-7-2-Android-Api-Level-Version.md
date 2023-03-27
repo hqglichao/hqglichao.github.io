@@ -9,6 +9,11 @@ tag: [Android]
 * content
 {:toc}
 
+Android官方库版本查询
+=======================================
+[https://mvnrepository.com/artifact/com.android.support/support-compat](https://mvnrepository.com/artifact/com.android.support/support-compat)  
+  
+
 
 api级别官方描述地址
 =======================================
@@ -50,6 +55,13 @@ api级别官方描述地址
 
 gradle版本和插件版本的对应关系
 =======================================
+
+### gradle 下载的存放地址
+```
+/Users/hqglichao/.gradle/wrapper/dists
+```
+
+### 插件版本和gradle版本对应关系
 [https://developer.android.com/studio/releases/gradle-plugin?hl=zh-cn](https://developer.android.com/studio/releases/gradle-plugin?hl=zh-cn)  
 
 | 插件版本      | 所需的 Gradle 版本 |
@@ -73,7 +85,3 @@ gradle版本和插件版本的对应关系
 | 7.0           | 7.0+               |
 | 7.1           | 7.2+               |
 | 7.2           | 7.3.3+             |
-
-官方库版本查询
-=======================================
-[https://mvnrepository.com/artifact/com.android.support/support-compat](https://mvnrepository.com/artifact/com.android.support/support-compat)
